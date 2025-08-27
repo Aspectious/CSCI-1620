@@ -1,4 +1,6 @@
 # Written by Griffin Siebert
+# REVISED 8/27/25 To remove Lists as per request
+#
 # I kinda overengineered the second helper function to allow for extendability.
 # I made the first one display the banner with variable amounts of dashes,
 # however in the example I found there were two counts, one with 34 Dashes,
@@ -24,18 +26,20 @@ def prompt(options, initial_text):
         choice = choice.lower()
 
         # Should get the first letter out of the response and check if it is a desired answer, then return it
-        if choice[:1] in options:
-            return choice[:1]
+        char = choice[0] # I Corrected this to not use the list operators to get it, instead using the index of the first letter.
+        if char in options:
+            return char
         else:
             correct_options = ""
             for option in options:
                 correct_options += option + "/"
             correct_options = correct_options[:len(correct_options) - 1]
+            # This still uses lists but just to dynamically provide options
             option_text = "Invalid (" + correct_options + "): "
 
 # Just turns the list that keeps track of their scores into a banner at the end
-def end(stats):
-    stats_text = f"Isabella - {stats[0]}, Genji - {stats[1]}, Hannah - {stats[2]}, Total - {stats[0] + stats[1] + stats[2]}"
+def end(stats_i,stats_g,stats_h):
+    stats_text = f"Isabella - {stats_i}, Genji - {stats_g}, Hannah - {stats_h}, Total - {stats_i + stats_g + stats_h}"
     draw_menu_banner(stats_text,57)
 
 def vote_menu():
@@ -49,14 +53,14 @@ def candidate_menu():
     print("1: Isabella")
     print("2: Genji")
     print("3: Hannah")
-    return prompt(["1", "2", "3"], "Candidate: ")
+    return int(prompt(["1", "2", "3"], "Candidate: "))
 
 
 
 
 def main():
     state = 1
-    stats = [0, 0, 0]
+    stats_i, stats_g, stats_h = 0, 0, 0
     # I originally thought of recursively showing panels but was thwarted with the no-parameter rule.
     # I decided on two loops, one that kept track of the menus and one that kept track of the options.
     while not state == 0:
@@ -68,14 +72,17 @@ def main():
                 state = 2
         elif (state == 2):
             vote = candidate_menu()
-            stats[int(vote)-1] += 1
+            # EDIT 8/27/25 To remove lists
             # I almost forgot to add the tiny line that confirms the user's choice.
-            if vote == "1":
+            if vote == 1:
+                stats_i += 1
                 print("Voted Isabella")
-            elif vote == "2":
+            elif vote == 2:
+                stats_g += 1
                 print("Voted Genji")
             else:
+                stats_h += 1
                 print("Voted Hannah")
             state = 1
-    end(stats)
+    end(stats_i, stats_g, stats_h)
 main()
