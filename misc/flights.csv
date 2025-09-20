@@ -1,0 +1,17 @@
+Airline,Departure,Destination,Departure Time,Arrival Time,Flight number
+United,Omaha,Chicago O Hare,15:28,17:06,739
+Southwest,Omaha,Phoenix,15:35,18:20,111
+Southwest,Omaha,Denver,15:40,17:20,378
+American,Omaha,Dallas-Ft. Worth,15:58,17:59,2188
+Southwest,Omaha,Atlanta,16:10,18:15,1167
+Southwest,Omaha,St. Louis,16:50,18:00,3904
+United,Omaha,Denver,17:05,18:45,1875
+American,Omaha,Los Angeles,17:15,20:45,4879
+Delta,Omaha,Atlanta,17:20,19:38,2364
+Delta,Omaha,Minneapolis,17:23,18:50,3857
+Delta,Omaha,Detroit,17:44,19:44,3754
+American,Omaha,Chicago O Hare,18:04,19:44,3138
+United,Omaha,Chicago O Hare,18:19,20:03,5714
+Southwest,Omaha,Chicago-Midway,18:40,20:05,3083
+Delta,Omaha,Salt Lake City,18:44,21:19,3896
+Southwest,Omaha,Las Vegas,18:45,21:35,1629

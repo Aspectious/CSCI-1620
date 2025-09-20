@@ -1,9 +1,6 @@
 # Written by Griffin Siebert
-<<<<<<< Updated upstream
 # REVISED 8/27/25 To remove Lists as per request
 #
-=======
->>>>>>> Stashed changes
 # I kinda overengineered the second helper function to allow for extendability.
 # I made the first one display the banner with variable amounts of dashes,
 # however in the example I found there were two counts, one with 34 Dashes,
