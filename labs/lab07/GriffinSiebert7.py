@@ -30,6 +30,7 @@ def alien_ears(n):
 
 # Tests, should only run if python file is run from main.
 def main():
+    # print(power(2,-1))
     print(power(2,3))
     print(power(-2,3))
     print(power(1,5))
